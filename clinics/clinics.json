@@ -1,0 +1,10 @@
+[
+    {
+        "clinic_type": "vet-clinics",
+        "clinic_url": "https://storage.googleapis.com/scratchpay-code-challenge/vet-clinics.json"
+    },
+    {
+        "clinic_type": "dental-clinics",
+        "clinic_url": "https://storage.googleapis.com/scratchpay-code-challenge/dental-clinics.json"
+    }
+]
