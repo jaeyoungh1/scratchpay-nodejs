@@ -1,5 +1,48 @@
 # Software Engineer Challenge
 
+## Run with Docker
+You must have Docker installed and PORT 3000 available.
+
+```
+docker build -t USERNAME/clinic-search-demo .
+
+docker run -dp 3000:3000 USERNAME/node-demo
+```
+
+## Run locally without Docker
+Navigate to the root of this project and run in development with hot restart
+```
+npm install
+npm run dev
+```
+
+#### Test locally
+Run npm test in the root of the project.
+```
+npm test
+```
+
+## Assumptions
+- I assumed that any search criteria would be received in the request body 
+- As the instructions specify that a database can't be used, I assumed that the route should use the provided Google API urls rather than manually copy-and-pasting the json objects 
+- The endpoint is written assuming that the clinic data will have the same format with three attributes that refer to the clinic's name, state, and opening:
+```
+{
+    "name":"name",
+    "state":"state",
+    "opening":{
+        "from":"00:00",
+        "to":"24:00"
+    }
+}
+```
+- I also assumed that the name key will only ever be called "name" or "clinicName", that the state key will only ever be called "stateCode" or "stateName", that the availability key will only ever be called "opening" or "availability", and that the opening and closing time would only ever be called "from" and "to".
+- I assumed that the "opening"/"availability" times would always be in military time in "00:00" format.
+- The test are written using the provided Google API urls
+- I saw that there are clinics located in the same state with the same name; however, since there are no "unique identifiers" (e.g. Clinic IDs), I wrote the endpoint so that it sends any response back as if these are different clinics rather than the same clinic
+- I assumed that the clinics don't have to be sent back in any particular order or priority
+
+## Challenge Instructions:
 The objective of this challenge is to call some endpoints containing a list of clinics and perform some actions on the result.
 
 
