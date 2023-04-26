@@ -8,10 +8,13 @@ const urls = clinic_list.map(obj => obj.clinic_url)
 
 
 router.post('/clinics', async (req, res) => {
+    // get search filter terms from request
     const {state, name, from, to} = req.body
 
+    // get all Clinic Data from an array of urls
     const data = await getAllClinicData(urls)
 
+    // filter all Clinic Data based on search filter terms
     const response = filterResults(data, state, name, from, to)
 
     res.json(response)    

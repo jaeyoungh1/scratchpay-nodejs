@@ -1,6 +1,7 @@
 // Helpers to filter the result for the /api/clinics route
 const fetch = require('node-fetch')
 
+// Object to map state codes to state names
 let statesCodeObj = {
     "AL": "Alabama",
     "AK": "Alaska",
@@ -87,6 +88,7 @@ function convertTimeStringToNumber(str) {
     return result
 }
 
+// get all Clinic Data from an array of urls
 async function getAllClinicData(arr) {
     let result = []
     const array = await Promise.all(
@@ -100,6 +102,7 @@ async function getAllClinicData(arr) {
     return result
 }
 
+// filter a json response based on params: state, name, from, to
 function filterResults(response, state, name, from, to) {
     if (state) {
         let stateParam = state.length === 2 ? convertStateCodeToName(state) : state
