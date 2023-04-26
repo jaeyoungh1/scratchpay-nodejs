@@ -2,7 +2,8 @@ const express = require('express');
 const fetch = require('node-fetch')
 const router = express.Router();
 
-const clinic_list = require('../../../clinics/clinics.json')
+const {filterResults, getAllClinicData} = require('../../filters')
+const clinic_list = require('../../clinics/clinics.json')
 const urls = clinic_list.map(obj => obj.clinic_url)
 
 
