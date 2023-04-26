@@ -8,6 +8,7 @@ docker build -t USERNAME/clinic-search-demo .
 
 docker run -dp 3000:3000 USERNAME/node-demo
 ```
+Navigate to http://localhost:3000/api/test to see the test endpoint.
 
 ## Run locally without Docker
 Create a .env file based on the .env.example file.
