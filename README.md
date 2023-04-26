@@ -10,6 +10,7 @@ docker run -dp 3000:3000 USERNAME/node-demo
 ```
 
 ## Run locally without Docker
+Create a .env file based on the .env.example file
 Navigate to the root of this project and run in development with hot restart
 ```
 npm install
