@@ -119,7 +119,6 @@ function filterResults(response, state, name, from, to) {
         let fromParam = convertTimeStringToNumber(from)
         response = response.filter(obj => {
             let clinicFrom = obj.opening ? convertTimeStringToNumber(obj.opening.from) : convertTimeStringToNumber(obj.availability.from)
-            console.log(fromParam, clinicFrom)
             return fromParam >= clinicFrom
         })
     }

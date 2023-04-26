@@ -14,9 +14,7 @@ router.post('/clinics', async (req, res) => {
 
     const response = filterResults(data, state, name, from, to)
 
-    console.log(response)
-    res.json(response)
-    
+    res.json(response)    
 })
 
 // generic test route
